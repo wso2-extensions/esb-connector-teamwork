@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~  Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~  WSO2 Inc. licenses this file to you under the Apache License,
+ ~  Version 2.0 (the "License"); you may not use this file except
+ ~  in compliance with the License.
+ ~  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~  Unless required by applicable law or agreed to in writing,
+ ~  software distributed under the License is distributed on an
+ ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~  KIND, either express or implied.  See the License for the
+ ~  specific language governing permissions and limitations
+ ~  under the License.
+-->
+
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="tw_createTask"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+    <description/>
+    <target>
+        <inSequence>
+            <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+            <property name="apiKey" expression="json-eval($.apiKey)"/>
+            <property name="taskListId" expression="json-eval($.taskListId)"/>
+            <property name="content" expression="json-eval($.content)"/>
+            <property name="notify" expression="json-eval($.notify)"/>
+            <property name="description" expression="json-eval($.description)"/>
+            <property name="dueDate" expression="json-eval($.dueDate)"/>
+            <property name="startDate" expression="json-eval($.startDate)"/>
+            <property name="estimatedMinutes" expression="json-eval($.estimatedMinutes)"/>
+            <property name="private" expression="json-eval($.private)"/>
+            <property name="priority" expression="json-eval($.priority)"/>
+            <property name="progress" expression="json-eval($.progress)"/>
+            <property name="attachments" expression="json-eval($.attachments)"/>
+            <property name="pendingFileAttachments"
+                      expression="json-eval($.pendingFileAttachments)"/>
+            <property name="responsiblePartyId" expression="json-eval($.responsiblePartyId)"/>
+            <property name="predecessorsId" expression="json-eval($.predecessorsId)"/>
+            <property name="predecessorsType" expression="json-eval($.predecessorsType)"/>
+            <property name="positionAfterTask" expression="json-eval($.positionAfterTask)"/>
+            <teamwork.init>
+                <apiUrl>{$ctx:apiUrl}</apiUrl>
+                <apiKey>{$ctx:apiKey}</apiKey>
+            </teamwork.init>
+            <teamwork.createTask>
+                <taskListId>{$ctx:taskListId}</taskListId>
+                <content>{$ctx:content}</content>
+                <notify>{$ctx:notify}</notify>
+                <description>{$ctx:description}</description>
+                <dueDate>{$ctx:dueDate}</dueDate>
+                <startDate>{$ctx:startDate}</startDate>
+                <estimatedMinutes>{$ctx:estimatedMinutes}</estimatedMinutes>
+                <private>{$ctx:private}</private>
+                <priority>{$ctx:priority}</priority>
+                <progress>{$ctx:progress}</progress>
+                <attachments>{$ctx:attachments}</attachments>
+                <pendingFileAttachments>{$ctx:pendingFileAttachments}</pendingFileAttachments>
+                <responsiblePartyId>{$ctx:responsiblePartyId}</responsiblePartyId>
+                <predecessorsId>{$ctx:predecessorsId}</predecessorsId>
+                <predecessorsType>{$ctx:predecessorsType}</predecessorsType>
+                <positionAfterTask>{$ctx:positionAfterTask}</positionAfterTask>
+            </teamwork.createTask>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+</proxy>
