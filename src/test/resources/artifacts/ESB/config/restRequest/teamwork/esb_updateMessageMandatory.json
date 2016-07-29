@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "messageId": "%s(updateMessageId)",
+  "messageId": "%s(messageId)",
   "title": "%s(messageTitle)",
   "categoryId": "%s(messageCategoryId)",
   "notify": "%s(notify)",

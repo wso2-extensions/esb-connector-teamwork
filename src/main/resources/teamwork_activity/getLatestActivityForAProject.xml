@@ -23,13 +23,13 @@
         <property name="uri.var.maxItems" expression="$func:maxItems"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="get-property('uri.var.maxItems') = '' or  not(string(get-property('uri.var.maxItems')))">
+                xpath="$ctx:uri.var.maxItems = '' or  not(string($ctx:uri.var.maxItems))">
             <then>
                 <property name="uri.var.maxItems" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '?maxItems=', get-property('uri.var.maxItems'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '?maxItems=', $ctx:uri.var.maxItems)"/>
             </else>
         </filter>
         <call>

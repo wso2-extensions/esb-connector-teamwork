@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "eventId": "%s(updateEventId)",
+  "eventId": "%s(eventId)",
   "start": "%s(eventStart)",
   "end": "%s(eventEnd)",
   "allDay": "%s(eventAllDay)",
@@ -9,7 +9,7 @@
   "description": "%s(eventDescription)",
   "where": "%s(eventWhere)",
   "type": "%s(eventType)",
-  "projectId": "%s(eventProjectId)",
+  "projectId": "%s(newProjectId)",
   "showAsBusy": "%s(eventShowAsBusy)",
   "id": "%s(createEId)",
   "attendingUserIds": "%s(eventAttendingUserIds)",

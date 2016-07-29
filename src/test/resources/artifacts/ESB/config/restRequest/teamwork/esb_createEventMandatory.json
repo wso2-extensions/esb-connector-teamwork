@@ -8,7 +8,7 @@
   "description": "%s(eventDescription)",
   "where": "%s(eventWhere)",
   "type": "%s(eventType)",
-  "projectId": "%s(eventProjectId)",
+  "projectId": "%s(newProjectId)",
   "showAsBusy": "%s(eventShowAsBusy)",
   "id": "%s(createEId)",
   "attendingUserIds": "%s(eventAttendingUserIds)",

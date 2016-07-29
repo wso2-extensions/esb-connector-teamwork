@@ -7,33 +7,46 @@ Pre-requisites:
 
 Tested Platform: 
 
-- UBUNTU 14.04
-- WSO2 ESB wso2esb-4.8.1
+- UBUNTU 14.04, Mac OSX 10.10.3
+- WSO2 ESB wso2esb-4.8.1, ESB 5.0.0-BETA
 - Java 1.7
 
 
 STEPS:
 
-1. Make sure the ESB 4.8.1 zip file at "{TEAMWORK_HOME}/repository/".
+1. Download ESB 5.0.0-BETA from official website. Extract the ESB and put "-XX:-UseSplitVerifier" under $JVM_MEM_OPTS into {ESB_HOME}/bin/wso2server.sh.
 
 2. Please make sure that the below mentioned Axis configurations are enabled (\repository\conf\axis2\axis2.xml).
- 
-	<messageFormatter contentType="multipart/form-data"
-				class="org.wso2.carbon.relay.ExpandingMessageFormatter"/> 
-	<messageBuilder contentType="multipart/form-data"
-				class="org.wso2.carbon.relay.BinaryRelayBuilder"/>
 
-3. Add following code block, just after the listeners block (Remove or comment all the other test blocks) in following file - "{TEAMWORK_HOME}/src/test/resources/testng.xml"
+	<messageFormatter contentType="multipart/form-data" class="org.wso2.carbon.relay.ExpandingMessageFormatter"/>
+	<messageBuilder contentType="multipart/form-data" class="org.wso2.carbon.relay.BinaryRelayBuilder"/>
 
-    <test name="Teamwork-Connector-Test" preserve-order="true" verbose="2">
-        <packages>
-            <package name="org.wso2.carbon.connector.integration.test.teamwork"/>
-        </packages>
-    </test> 
+    Compress the ESB and copy wso2esb-5.0.0-BETA.zip file in to location "{SPOTIFY_CONNECTOR_HOME}/repository/".
 
-4. Copy proxy files to following location "src/test/resources/artifacts/ESB/config/proxies/teamwork/"
+4. Create a Teamwork account and derive the API Key:
+	i) 	 Using the URL "https://www.teamwork.com/" create a basecamp account.
+	ii)  Derive the API Key.
+	     a. Log in to your Teamwork.com account and click your profile picture in the top right.
+         b. Click the Edit my details button and choose the API tab
+         c. If your API is not active, turn it on
+         d. Agree to the API Terms & Conditions and your token will be generated
+    iii) Find the 'Site Address' and navigate to that url, click on 'PROJECTS' tab, create a project and find the project id.
 
-5. Copy request files to following "src/test/resources/artifacts/ESB/config/restRequests/teamwork/"
+3. Copy proxy files to following location "src/test/resources/artifacts/ESB/config/proxies/teamwork/"
+
+4. Copy request files to following "src/test/resources/artifacts/ESB/config/restRequests/teamwork/"
+
+5. Please do the following steps before executing the test.
+       1.  Add a user and send invite. then log in to the mail (which is used to add the user) and click 'Get Started' button on the confirmation mail.
+   	   2.  Create a project
+   	   3.  Add at least one milestone into that project
+   	   4.  Upload at least one file onto that project
+   	   5.  Add at least one message into that project and reply to that message
+   	   6.  Create a company into that project
+   	   7.  Add time entry into that project
+   	   8.  This project should has at least one message and the user mentioned by id has not been assigned to that project.
+   	   9.  Create at least a notebook into that project
+   	   10. Create at least one link into that project
 
 6. Edit the "teamwork.properties" at src/test/resources/artifacts/connector/config/ using valid and relevant data. Parameters to be changed are mentioned below.
 
@@ -54,9 +67,9 @@ STEPS:
  	Required to change on every test run :
  	deleteActivityId
 	deleteFileId
-	addFilePendingFileRef
-	newVersionPendingFileRef
-	deleteActivityId
+	permissionProjectId
+	permissionUserId - This user must not be assigned to above mentioned project.
+	commentResourceId - Id of the task which has at least a comment
 	deletePersonId
 	createProjectName
 	deleteProjectId

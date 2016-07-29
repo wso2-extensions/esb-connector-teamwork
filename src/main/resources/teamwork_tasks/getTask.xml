@@ -32,43 +32,43 @@
                   expression="$func:includeCompletedSubTasks"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="get-property('uri.var.getFiles') = '' or  not(string(get-property('uri.var.getFiles')))">
+                xpath="$ctx:uri.var.getFiles = '' or  not(string($ctx:uri.var.getFiles))">
             <then>
                 <property name="uri.var.getFiles" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;getFiles=', get-property('uri.var.getFiles'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;getFiles=', $ctx:uri.var.getFiles)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.dataSet') = '' or  not(string(get-property('uri.var.dataSet')))">
+                xpath="$ctx:uri.var.dataSet = '' or  not(string($ctx:uri.var.dataSet))">
             <then>
                 <property name="uri.var.dataSet" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;dataSet=', get-property('uri.var.dataSet'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;dataSet=', $ctx:uri.var.dataSet)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.nestSubTasks') = '' or  not(string(get-property('uri.var.nestSubTasks')))">
+                xpath="$ctx:uri.var.nestSubTasks = '' or  not(string($ctx:uri.var.nestSubTasks))">
             <then>
                 <property name="uri.var.nestSubTasks" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;nestSubTasks=', get-property('uri.var.nestSubTasks'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;nestSubTasks=', $ctx:uri.var.nestSubTasks)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.includeCompletedSubTasks') = '' or  not(string(get-property('uri.var.includeCompletedSubTasks')))">
+                xpath="$ctx:uri.var.includeCompletedSubTasks = '' or  not(string($ctx:uri.var.includeCompletedSubTasks))">
             <then>
                 <property name="uri.var.includeCompletedSubTasks" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;includeCompletedSubtasks=', get-property('uri.var.includeCompletedSubTasks'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;includeCompletedSubtasks=', $ctx:uri.var.includeCompletedSubTasks)"/>
             </else>
         </filter>
         <call>

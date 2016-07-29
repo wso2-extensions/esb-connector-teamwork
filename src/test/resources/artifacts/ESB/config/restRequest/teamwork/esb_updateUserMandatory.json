@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "personId": "%s(updateUserId)",
+  "personId": "%s(userId)",
   "firstName": "%s(updateFirstName)",
   "lastName": "%s(lastName)",
   "emailAddress": "%s(updateEmail)",

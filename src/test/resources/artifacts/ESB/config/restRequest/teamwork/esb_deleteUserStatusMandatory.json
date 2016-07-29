@@ -1,6 +1,6 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "userId": "%s(statusUserId)",
+  "userId": "%s(permissionUserId)",
   "statusId": "%s(userStatusId)"
 }

@@ -1,6 +1,6 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "messageReplyId": "%s(updateMessageReplyId)",
+  "messageReplyId": "%s(messageReplyId)",
   "messageBody": "%s(replyMessageBody)"
 }

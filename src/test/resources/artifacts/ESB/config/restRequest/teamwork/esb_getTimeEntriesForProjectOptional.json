@@ -8,5 +8,5 @@
   "toDate": "%s(timeEntryToDate)",
   "toTime": "%s(timeEntryToTime)",
   "sortOrder": "%s(timeEntrySortOrder)",
-  "userId": "%s(timeEntryUserId)"
+  "userId": "%s(permissionUserId)"
 }

@@ -4,10 +4,10 @@
   "projectId": "%s(projectId)",
   "toDoLists": [
     {
-      "id": "277196"
+      "id": "%s(toDoListId1)"
     },
     {
-      "id": "272411"
+      "id": "%s(toDoListId2)"
     }
   ]
 }

@@ -1,13 +1,12 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "timeEntryId": "%s(updateTimeEntryId)",
+  "timeEntryId": "%s(timeLogId)",
   "description": "%s(timeEntryDescription)",
-  "personId": "%s(timeEntryPersonId)",
+  "personId": "%s(permissionUserId)",
   "date": "%s(timeEntryDate)",
   "time": "%s(timeEntryTime)",
   "hours": "%s(timeEntryHours)",
   "minutes": "%s(timeEntryMinutes)",
   "isBillable": "%s(timeEntryIsBillable)"
 }
-

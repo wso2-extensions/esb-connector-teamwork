@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "commentId": "%s(updateCommentId)",
+  "commentId": "%s(commentId)",
   "commentBody": "%s(commentBody)",
   "notify": "%s(commentNotify)",
   "isPrivate": "%s(commentIsPrivate)",

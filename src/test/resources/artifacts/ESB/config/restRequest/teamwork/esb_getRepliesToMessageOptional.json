@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "messageId": "%s(replyMessageId)",
+  "messageId": "%s(messageId)",
   "page": "%s(page)",
   "pageSize": "%s(pageSize)"
 }

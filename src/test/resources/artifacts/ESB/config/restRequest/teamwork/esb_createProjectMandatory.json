@@ -5,7 +5,7 @@
   "description": "%s(projectDescription)",
   "startDate": "%s(projectStartDate)",
   "endDate": "%s(projectEndDate)",
-  "companyId": "%s(projectCompanyId)",
-  "newCompany": "%s(projectNewCompany)",
+  "companyId": "%s(companyId)",
+  "newCompany": "%s(newCompanyId)",
   "categoryId": "%s(projectCategoryId)"
 }

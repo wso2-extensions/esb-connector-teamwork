@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "fileCategoryId": "%s(updateFileCategoryId)",
+  "fileCategoryId": "%s(fileCategoryId)",
   "name": "%s(updateCategoryName)",
   "parentId": "%s(categoryParentId)"
 }

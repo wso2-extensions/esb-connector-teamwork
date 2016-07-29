@@ -1,5 +1,5 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "messageReplyId": "%s(deleteMessageReplyId)"
+  "messageReplyId": "%s(messageReplyId)"
 }

@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "taskListId": "%s(taskListIdForTask)",
+  "taskListId": "%s(taskListId)",
   "filter": "%s(taskFilter)",
   "page": "%s(page)",
   "pageSize": "%s(pageSize)",

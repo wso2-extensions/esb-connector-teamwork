@@ -65,194 +65,194 @@
         <property name="uri.var.ignoreStartDates" expression="$func:ignoreStartDates"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="get-property('uri.var.filter') = '' or  not(string(get-property('uri.var.filter')))">
+                xpath="$ctx:uri.var.filter = '' or  not(string($ctx:uri.var.filter))">
             <then>
                 <property name="uri.var.filter" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;filter=', get-property('uri.var.filter'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;filter=', $ctx:uri.var.filter)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.page') = '' or  not(string(get-property('uri.var.page')))">
+                xpath="$ctx:uri.var.page = '' or  not(string($ctx:uri.var.page))">
             <then>
                 <property name="uri.var.page" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;page=', get-property('uri.var.page'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;page=', $ctx:uri.var.page)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.pageSize') = '' or  not(string(get-property('uri.var.pageSize')))">
+                xpath="$ctx:uri.var.pageSize = '' or  not(string($ctx:uri.var.pageSize))">
             <then>
                 <property name="uri.var.pageSize" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;pageSize=', get-property('uri.var.pageSize'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;pageSize=', $ctx:uri.var.pageSize)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.startDate') = '' or  not(string(get-property('uri.var.startDate')))">
+                xpath="$ctx:uri.var.startDate = '' or  not(string($ctx:uri.var.startDate))">
             <then>
                 <property name="uri.var.startDate" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;startdate=', get-property('uri.var.startDate'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;startdate=', $ctx:uri.var.startDate)"/>
                 <filter
-                        xpath="get-property('uri.var.endDate') = '' or  not(string(get-property('uri.var.endDate')))">
+                        xpath="$ctx:uri.var.endDate = '' or  not(string($ctx:uri.var.endDate))">
                     <then>
                         <property name="uri.var.endDate" value=""/>
                     </then>
                     <else>
-                        <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                        '&amp;enddate=', get-property('uri.var.endDate'))"/>
+                        <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                        '&amp;enddate=', $ctx:uri.var.endDate)"/>
                     </else>
                 </filter>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.updatedAfterDate') = '' or  not(string(get-property('uri.var.updatedAfterDate')))">
+                xpath="$ctx:uri.var.updatedAfterDate = '' or  not(string($ctx:uri.var.updatedAfterDate))">
             <then>
                 <property name="uri.var.updatedAfterDate" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;updatedAfterDate=', get-property('uri.var.updatedAfterDate'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;updatedAfterDate=', $ctx:uri.var.updatedAfterDate)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.showDeleted') = '' or  not(string(get-property('uri.var.showDeleted')))">
+                xpath="$ctx:uri.var.showDeleted = '' or  not(string($ctx:uri.var.showDeleted))">
             <then>
                 <property name="uri.var.showDeleted" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;showDeleted=', get-property('uri.var.showDeleted'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;showDeleted=', $ctx:uri.var.showDeleted)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.includeCompletedTasks') = '' or  not(string(get-property('uri.var.includeCompletedTasks')))">
+                xpath="$ctx:uri.var.includeCompletedTasks = '' or  not(string($ctx:uri.var.includeCompletedTasks))">
             <then>
                 <property name="uri.var.includeCompletedTasks" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;includeCompletedTasks=', get-property('uri.var.includeCompletedTasks'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;includeCompletedTasks=', $ctx:uri.var.includeCompletedTasks)"/>
             </else>
         </filter>
 
         <filter
-                xpath="get-property('uri.var.includeCompletedSubTasks') = '' or  not(string(get-property('uri.var.includeCompletedSubTasks')))">
+                xpath="$ctx:uri.var.includeCompletedSubTasks = '' or  not(string($ctx:uri.var.includeCompletedSubTasks))">
             <then>
                 <property name="uri.var.includeCompletedSubTasks" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;includeCompletedSubtasks=', get-property('uri.var.includeCompletedSubTasks'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;includeCompletedSubtasks=', $ctx:uri.var.includeCompletedSubTasks)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.creatorIds') = '' or  not(string(get-property('uri.var.creatorIds')))">
+                xpath="$ctx:uri.var.creatorIds = '' or  not(string($ctx:uri.var.creatorIds))">
             <then>
                 <property name="uri.var.creatorIds" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;creator-ids=', get-property('uri.var.creatorIds'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;creator-ids=', $ctx:uri.var.creatorIds)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.include') = '' or  not(string(get-property('uri.var.include')))">
+                xpath="$ctx:uri.var.include = '' or  not(string($ctx:uri.var.include))">
             <then>
                 <property name="uri.var.include" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;include=', get-property('uri.var.include'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;include=', $ctx:uri.var.include)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.responsiblePartyIds') = '' or  not(string(get-property('uri.var.responsiblePartyIds')))">
+                xpath="$ctx:uri.var.responsiblePartyIds = '' or  not(string($ctx:uri.var.responsiblePartyIds))">
             <then>
                 <property name="uri.var.responsiblePartyIds" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;responsible-party-ids=', get-property('uri.var.responsiblePartyIds'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;responsible-party-ids=', $ctx:uri.var.responsiblePartyIds)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.sort') = '' or  not(string(get-property('uri.var.sort')))">
+                xpath="$ctx:uri.var.sort = '' or  not(string($ctx:uri.var.sort))">
             <then>
                 <property name="uri.var.sort" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;sort=', get-property('uri.var.sort'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;sort=', $ctx:uri.var.sort)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.getSubTasks') = '' or  not(string(get-property('uri.var.getSubTasks')))">
+                xpath="$ctx:uri.var.getSubTasks = '' or  not(string($ctx:uri.var.getSubTasks))">
             <then>
                 <property name="uri.var.getSubTasks" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;getSubTasks=', get-property('uri.var.getSubTasks'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;getSubTasks=', $ctx:uri.var.getSubTasks)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.nestSubTasks') = '' or  not(string(get-property('uri.var.nestSubTasks')))">
+                xpath="$ctx:uri.var.nestSubTasks = '' or  not(string($ctx:uri.var.nestSubTasks))">
             <then>
                 <property name="uri.var.nestSubTasks" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;nestSubTasks=', get-property('uri.var.nestSubTasks'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;nestSubTasks=', $ctx:uri.var.nestSubTasks)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.getFiles') = '' or  not(string(get-property('uri.var.getFiles')))">
+                xpath="$ctx:uri.var.getFiles = '' or  not(string($ctx:uri.var.getFiles))">
             <then>
                 <property name="uri.var.getFiles" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;getFiles=', get-property('uri.var.getFiles'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;getFiles=', $ctx:uri.var.getFiles)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.dataSet') = '' or  not(string(get-property('uri.var.dataSet')))">
+                xpath="$ctx:uri.var.dataSet = '' or  not(string($ctx:uri.var.dataSet))">
             <then>
                 <property name="uri.var.dataSet" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;dataSet=', get-property('uri.var.dataSet'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;dataSet=', $ctx:uri.var.dataSet)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.includeToday') = '' or  not(string(get-property('uri.var.includeToday')))">
+                xpath="$ctx:uri.var.includeToday = '' or  not(string($ctx:uri.var.includeToday))">
             <then>
                 <property name="uri.var.includeToday" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;includeToday=', get-property('uri.var.includeToday'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;includeToday=', $ctx:uri.var.includeToday)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.ignoreStartDates') = '' or  not(string(get-property('uri.var.ignoreStartDates')))">
+                xpath="$ctx:uri.var.ignoreStartDates = '' or  not(string($ctx:uri.var.ignoreStartDates))">
             <then>
                 <property name="uri.var.ignoreStartDates" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;ignore-start-dates=', get-property('uri.var.ignoreStartDates'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;ignore-start-dates=', $ctx:uri.var.ignoreStartDates)"/>
             </else>
         </filter>
         <call>

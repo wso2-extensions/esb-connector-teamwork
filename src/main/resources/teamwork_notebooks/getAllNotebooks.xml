@@ -21,13 +21,13 @@
         <property name="uri.var.includeContent" expression="$func:includeContent"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="get-property('uri.var.includeContent') = '' or  not(string(get-property('uri.var.includeContent')))">
+                xpath="$ctx:uri.var.includeContent = '' or  not(string($ctx:uri.var.includeContent))">
             <then>
                 <property name="uri.var.includeContent" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;includeContent=', get-property('uri.var.includeContent'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;includeContent=', $ctx:uri.var.includeContent)"/>
             </else>
         </filter>
         <call>
