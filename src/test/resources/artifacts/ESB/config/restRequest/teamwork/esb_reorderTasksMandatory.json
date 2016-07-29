@@ -1,13 +1,10 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "taskListId": "%s(taskListIdForTask)",
+  "taskListId": "%s(taskListId)",
   "tasks": [
     {
-      "id": "1912304"
-    },
-    {
-      "id": "1903127"
+      "id": "%s(taskId)"
     }
   ]
 }

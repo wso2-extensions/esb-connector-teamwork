@@ -1,6 +1,5 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "timeEntryId": "%s(updateTimeEntryId)"
+  "timeEntryId": "%s(timeLogId)"
 }
-

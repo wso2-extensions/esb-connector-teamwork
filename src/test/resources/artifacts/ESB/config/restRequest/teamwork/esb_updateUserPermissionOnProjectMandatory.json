@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "projectId": "%s(updatePermissionProjectId)",
+  "projectId": "%s(projectId)",
   "userId": "%s(permissionUserId)",
   "viewMessagesAndFiles": "%s(viewMessagesAndFiles)",
   "viewTasksAndMilestones": "%s(viewTasksAndMilestones)",

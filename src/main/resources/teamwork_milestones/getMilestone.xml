@@ -27,32 +27,32 @@
         <property name="uri.var.showTasks" expression="$func:showTasks"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="get-property('uri.var.getProgress') = '' or  not(string(get-property('uri.var.getProgress')))">
+                xpath="$ctx:uri.var.getProgress = '' or  not(string($ctx:uri.var.getProgress))">
             <then>
                 <property name="uri.var.getProgress" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;getProgress=', get-property('uri.var.getProgress'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;getProgress=', $ctx:uri.var.getProgress)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.showTaskLists') = '' or  not(string(get-property('uri.var.showTaskLists')))">
+                xpath="$ctx:uri.var.showTaskLists = '' or  not(string($ctx:uri.var.showTaskLists))">
             <then>
                 <property name="uri.var.showTaskLists" value=""/>
                 <property name="uri.var.showTasks" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;showTaskLists=', get-property('uri.var.showTaskLists'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;showTaskLists=', $ctx:uri.var.showTaskLists)"/>
                 <filter
-                        xpath="get-property('uri.var.showTasks') = '' or  not(string(get-property('uri.var.showTasks')))">
+                        xpath="$ctx:uri.var.showTasks = '' or  not(string($ctx:uri.var.showTasks))">
                     <then>
                         <property name="uri.var.showTasks" value=""/>
                     </then>
                     <else>
-                        <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                        '&amp;showTasks=', get-property('uri.var.showTasks'))"/>
+                        <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                        '&amp;showTasks=', $ctx:uri.var.showTasks)"/>
                     </else>
                 </filter>
             </else>

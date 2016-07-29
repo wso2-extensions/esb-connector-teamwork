@@ -1,5 +1,5 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "milestoneId": "%s(completeMilestoneId)"
+  "milestoneId": "%s(milestoneId)"
 }

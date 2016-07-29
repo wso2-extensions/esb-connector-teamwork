@@ -21,30 +21,31 @@
     <sequence>
         <property name="uri.var.taskListId" expression="$func:taskListId"/>
         <property name="uri.var.tasks" expression="$func:tasks"/>
-        <script language="js"><![CDATA[
-            //request body param variables
-            var tasks=''+mc.getProperty('uri.var.tasks');
-            var tasksObj = eval ("(" + tasks + ")");
-            var query = '';
-            if (mc.getProperty('uri.var.tasks') != null && mc.getProperty('uri.var.tasks') != "") {
-                query = '[';
+        <script language="js">
+            <![CDATA[
+            var tasks = mc.getProperty('uri.var.tasks');
+            var taskLists = "{\"taskLists\":" + tasks + "}";
+            var taskListsObj = eval ("(" + taskLists + ")");
+            var urlQuery = "";
+            if (tasks != null && tasks != "") {
+                urlQuery = "[";
                 var added = 0;
-                for(var i in tasksObj) {
-                    var temp = tasksObj[i].id;
+                for (i = 0; i < taskListsObj.taskLists.length; ++i) {
+                    listObject = new Object();
+                    listObject = taskListsObj.taskLists[i];
+                    var temp = listObject["id"];
                     if(added == 0) {
-                        query = query + '{\"todo-item\":{\"id\":\"'+temp +'\"}}';
+                        urlQuery += "{\"todo-item\":{\"id\":\"" + temp + "\"}}";
                         added = 1;
                     }else {
-                        query = query + ',{\"todo-item\":{\"id\":\"'+temp +'\"}}';
+                        urlQuery += ",{\"todo-item\":{\"id\":\"" + temp + "\"}}";
                     }
                 }
-                query = query + ']';
+                urlQuery += "]";
             }
-             if (query != '') {
-                var tasksId = '"todo-items":' + query;
-            }
-            mc.setProperty('uri.var.temp.tasks', tasksId);
-        ]]>
+            var urlQuery = "\"todo-items\":" + urlQuery;
+            mc.setProperty('uri.var.tasks', urlQuery);
+         ]]>
         </script>
         <payloadFactory media-type="json">
             <format>
@@ -53,7 +54,7 @@
                 }
             </format>
             <args>
-                <arg expression="get-property('uri.var.temp.tasks')"/>
+                <arg expression="$ctx:uri.var.tasks"/>
             </args>
         </payloadFactory>
         <property name="POST_TO_URI" value="true" scope="axis2" type="STRING"></property>

@@ -1,0 +1,11 @@
+{
+  "time-entry": {
+    "description": "New time entry",
+    "person-id": "%s(permissionUserId)",
+    "date": "%s(timeEntryDate)",
+    "time": "%s(timeEntryTime)",
+    "hours": "1",
+    "minutes": "15",
+    "isbillable": "1"
+  }
+}

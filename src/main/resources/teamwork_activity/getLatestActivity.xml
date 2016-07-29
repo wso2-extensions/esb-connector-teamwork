@@ -23,23 +23,23 @@
         <property name="uri.var.onlyStarred" expression="$func:onlyStarred"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="get-property('uri.var.maxItems') = '' or  not(string(get-property('uri.var.maxItems')))">
+                xpath="$ctx:uri.var.maxItems = '' or  not(string($ctx:uri.var.maxItems))">
             <then>
                 <property name="uri.var.maxItems" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;maxItems=', get-property('uri.var.maxItems'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;maxItems=', $ctx:uri.var.maxItems)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.onlyStarred') = '' or  not(string(get-property('uri.var.onlyStarred')))">
+                xpath="$ctx:uri.var.onlyStarred = '' or  not(string($ctx:uri.var.onlyStarred))">
             <then>
                 <property name="uri.var.onlyStarred" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;onlyStarred=', get-property('uri.var.onlyStarred'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;onlyStarred=', $ctx:uri.var.onlyStarred)"/>
             </else>
         </filter>
         <call>

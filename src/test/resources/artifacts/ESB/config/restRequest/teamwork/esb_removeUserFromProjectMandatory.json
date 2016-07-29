@@ -1,6 +1,6 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "projectId": "%s(permissionProjectId)",
+  "projectId": "%s(projectId)",
   "userId": "%s(permissionUserId)"
 }

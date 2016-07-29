@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "userId": "%s(statusUserId)",
+  "userId": "%s(permissionUserId)",
   "status": "%s(status)",
   "notify": "%s(statusNotify)"
 }

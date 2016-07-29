@@ -1,5 +1,5 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "messageCategoryId": "%s(updateMessageCategoryId)"
+  "messageCategoryId": "%s(categoryId)"
 }

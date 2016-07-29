@@ -21,30 +21,25 @@
     <sequence>
         <property name="uri.var.projectId" expression="$func:projectId"/>
         <property name="uri.var.toDoLists" expression="$func:toDoLists"/>
-        <script language="js"><![CDATA[
-            //request body param variables
-            var toDoLists=''+mc.getProperty('uri.var.toDoLists');
+        <script language="js">
+            <![CDATA[
+            var lists = mc.getProperty('uri.var.toDoLists');
+            var toDoLists = "{\"toDoLists\":" + lists + "}";
             var toDoListsObj = eval ("(" + toDoLists + ")");
-            var query = '';
-            if (mc.getProperty('uri.var.toDoLists') != null && mc.getProperty('uri.var.toDoLists') != "") {
-                query = '[';
+            var urlQuery = "";
+            if (lists != null && lists != "") {
+                urlQuery = "[";
                 var added = 0;
-                for(var i in toDoListsObj) {
-                    var temp = toDoListsObj[i].id;
-                    if(added == 0) {
-                        query = query + '{\"todo-list\":{\"id\":\"'+temp +'\"}}';
-                        added = 1;
-                    }else {
-                        query = query + ',{\"todo-list\":{\"id\":\"'+temp +'\"}}';
-                    }
+                for (i = 0; i < toDoListsObj.toDoLists.length; ++i) {
+                    listObject = new Object();
+                    listObject = toDoListsObj.toDoLists[i];
+                    var temp = listObject["id"];
+                    urlQuery = temp;
                 }
-                query = query + ']';
             }
-             if (query != '') {
-                var toDoListsId = '"todo-lists":' + query;
-            }
-            mc.setProperty('uri.var.temp.toDoLists', toDoListsId);
-        ]]>
+            var urlQuery = "\"todo-lists\":" + urlQuery;
+            mc.setProperty('uri.var.toDoLists', urlQuery);
+         ]]>
         </script>
         <payloadFactory media-type="json">
             <format>
@@ -53,7 +48,7 @@
                 }
             </format>
             <args>
-                <arg expression="get-property('uri.var.temp.toDoLists')"/>
+                <arg expression="$ctx:uri.var.toDoLists"/>
             </args>
         </payloadFactory>
         <property name="POST_TO_URI" value="true" scope="axis2" type="STRING"></property>

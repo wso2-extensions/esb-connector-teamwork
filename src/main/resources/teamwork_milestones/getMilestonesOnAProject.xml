@@ -26,23 +26,23 @@
         <property name="uri.var.getProgress" expression="$func:getProgress"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="get-property('uri.var.find') = '' or  not(string(get-property('uri.var.find')))">
+                xpath="$ctx:uri.var.find = '' or  not(string($ctx:uri.var.find))">
             <then>
                 <property name="uri.var.find" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;find=', get-property('uri.var.find'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;find=', $ctx:uri.var.find)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.getProgress') = '' or  not(string(get-property('uri.var.getProgress')))">
+                xpath="$ctx:uri.var.getProgress = '' or  not(string($ctx:uri.var.getProgress))">
             <then>
                 <property name="uri.var.getProgress" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;getProgress=', get-property('uri.var.getProgress'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;getProgress=', $ctx:uri.var.getProgress)"/>
             </else>
         </filter>
         <call>

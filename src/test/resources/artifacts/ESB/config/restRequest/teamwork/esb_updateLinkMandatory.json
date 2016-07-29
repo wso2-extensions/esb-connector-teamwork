@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "linkId": "%s(updateLinkId)",
+  "linkId": "%s(linkId)",
   "name": "%s(linkName)",
   "description": "%s(linkDescription)",
   "private": "%s(linkPrivate)",

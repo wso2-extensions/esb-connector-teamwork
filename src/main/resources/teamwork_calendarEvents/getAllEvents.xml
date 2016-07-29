@@ -29,33 +29,33 @@
         <property name="uri.var.page" expression="$func:page"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="get-property('uri.var.showDeleted') = '' or  not(string(get-property('uri.var.showDeleted')))">
+                xpath="uri.var.showDeleted = '' or  not(string(uri.var.showDeleted))">
             <then>
                 <property name="uri.var.showDeleted" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;showDeleted=', get-property('uri.var.showDeleted'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat(uri.var.optionalParameters,
+                '&amp;showDeleted=', uri.var.showDeleted)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.updatedAfterDate') = '' or  not(string(get-property('uri.var.updatedAfterDate')))">
+                xpath="uri.var.updatedAfterDate = '' or  not(string(uri.var.updatedAfterDate))">
             <then>
                 <property name="uri.var.updatedAfterDate" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;updatedAfterDate=', get-property('uri.var.updatedAfterDate'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat(uri.var.optionalParameters,
+                '&amp;updatedAfterDate=', uri.var.updatedAfterDate)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.page') = '' or  not(string(get-property('uri.var.page')))">
+                xpath="uri.var.page = '' or  not(string(uri.var.page))">
             <then>
                 <property name="uri.var.page" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;page=', get-property('uri.var.page'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat(uri.var.optionalParameters,
+                '&amp;page=', uri.var.page)"/>
             </else>
         </filter>
 

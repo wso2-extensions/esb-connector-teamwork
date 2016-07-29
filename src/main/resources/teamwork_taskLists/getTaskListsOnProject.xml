@@ -44,104 +44,104 @@
         <property name="uri.var.responsiblePartyId" expression="$func:responsiblePartyId"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="get-property('uri.var.filter') = '' or  not(string(get-property('uri.var.filter')))">
+                xpath="$ctx:uri.var.filter = '' or  not(string($ctx:uri.var.filter))">
             <then>
                 <property name="uri.var.filter" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;filter=', get-property('uri.var.filter'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;filter=', $ctx:uri.var.filter)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.showMilestones') = '' or  not(string(get-property('uri.var.showMilestones')))">
+                xpath="$ctx:uri.var.showMilestones = '' or  not(string($ctx:uri.var.showMilestones))">
             <then>
                 <property name="uri.var.showMilestones" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;showMilestones=', get-property('uri.var.showMilestones'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;showMilestones=', $ctx:uri.var.showMilestones)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.showTasks') = '' or  not(string(get-property('uri.var.showTasks')))">
+                xpath="$ctx:uri.var.showTasks = '' or  not(string($ctx:uri.var.showTasks))">
             <then>
                 <property name="uri.var.showTasks" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;showTasks=', get-property('uri.var.showTasks'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;showTasks=', $ctx:uri.var.showTasks)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.getOverdueCount') = '' or  not(string(get-property('uri.var.getOverdueCount')))">
+                xpath="$ctx:uri.var.getOverdueCount = '' or  not(string($ctx:uri.var.getOverdueCount))">
             <then>
                 <property name="uri.var.getOverdueCount" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;getOverdueCount=', get-property('uri.var.getOverdueCount'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;getOverdueCount=', $ctx:uri.var.getOverdueCount)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.getCompletedCount') = '' or  not(string(get-property('uri.var.getCompletedCount')))">
+                xpath="$ctx:uri.var.getCompletedCount = '' or  not(string($ctx:uri.var.getCompletedCount))">
             <then>
                 <property name="uri.var.getCompletedCount" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;getCompletedCount=', get-property('uri.var.getCompletedCount'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;getCompletedCount=', $ctx:uri.var.getCompletedCount)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.status') = '' or  not(string(get-property('uri.var.status')))">
+                xpath="$ctx:uri.var.status = '' or  not(string($ctx:uri.var.status))">
             <then>
                 <property name="uri.var.status" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;status=', get-property('uri.var.status'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;status=', $ctx:uri.var.status)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.includeOverdue') = '' or  not(string(get-property('uri.var.includeOverdue')))">
+                xpath="$ctx:uri.var.includeOverdue = '' or  not(string($ctx:uri.var.includeOverdue))">
             <then>
                 <property name="uri.var.includeOverdue" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;includeOverdue=', get-property('uri.var.includeOverdue'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;includeOverdue=', $ctx:uri.var.includeOverdue)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.getSubTasks') = '' or  not(string(get-property('uri.var.getSubTasks')))">
+                xpath="$ctx:uri.var.getSubTasks = '' or  not(string($ctx:uri.var.getSubTasks))">
             <then>
                 <property name="uri.var.getSubTasks" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;getSubTasks=', get-property('uri.var.getSubTasks'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;getSubTasks=', $ctx:uri.var.getSubTasks)"/>
             </else>
         </filter>
 
         <filter
-                xpath="get-property('uri.var.nestSubTasks') = '' or  not(string(get-property('uri.var.nestSubTasks')))">
+                xpath="$ctx:uri.var.nestSubTasks = '' or  not(string($ctx:uri.var.nestSubTasks))">
             <then>
                 <property name="uri.var.nestSubTasks" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;nestSubTasks=', get-property('uri.var.nestSubTasks'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;nestSubTasks=', $ctx:uri.var.nestSubTasks)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.responsiblePartyId') = '' or  not(string(get-property('uri.var.responsiblePartyId')))">
+                xpath="$ctx:uri.var.responsiblePartyId = '' or  not(string($ctx:uri.var.responsiblePartyId))">
             <then>
                 <property name="uri.var.responsiblePartyId" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;responsible-party-id=', get-property('uri.var.responsiblePartyId'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;responsible-party-id=', $ctx:uri.var.responsiblePartyId)"/>
             </else>
         </filter>
         <call>

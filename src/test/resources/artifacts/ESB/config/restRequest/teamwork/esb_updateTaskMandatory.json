@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "taskId": "%s(updateTaskId)",
+  "taskId": "%s(taskId)",
   "content": "%s(updateTaskContent)",
   "notify": "%s(taskNotify)",
   "description": "%s(taskDescription)",
@@ -14,5 +14,5 @@
   "attachments": "%s(taskAttachments)",
   "pendingFileAttachments": "%s(taskPendingFileAttachments)",
   "responsiblePartyId": "%s(taskResponsiblePartyId)",
-  "taskListId": "%s(taskListIdForTask)"
+  "taskListId": "%s(taskListId)"
 }

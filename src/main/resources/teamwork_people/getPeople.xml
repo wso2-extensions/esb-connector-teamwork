@@ -23,23 +23,23 @@
         <property name="uri.var.pageSize" expression="$func:pageSize"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="get-property('uri.var.page') = '' or  not(string(get-property('uri.var.page')))">
+                xpath="$ctx:uri.var.page = '' or  not(string($ctx:uri.var.page))">
             <then>
                 <property name="uri.var.page" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;page=', get-property('uri.var.page'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;page=', $ctx:uri.var.page)"/>
             </else>
         </filter>
         <filter
-                xpath="get-property('uri.var.pageSize') = '' or  not(string(get-property('uri.var.pageSize')))">
+                xpath="$ctx:uri.var.pageSize = '' or  not(string($ctx:uri.var.pageSize))">
             <then>
                 <property name="uri.var.pageSize" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
-                '&amp;pageSize=', get-property('uri.var.pageSize'))"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;pageSize=', $ctx:uri.var.pageSize)"/>
             </else>
         </filter>
         <call>

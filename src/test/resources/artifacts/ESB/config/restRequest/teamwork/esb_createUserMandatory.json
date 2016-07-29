@@ -7,7 +7,7 @@
   "userType": "%s(userType)",
   "username": "%s(username)",
   "password": "%s(password)",
-  "companyId": "%s(userCompanyId)",
+  "companyId": "%s(companyId)",
   "title": "%s(title)",
   "phoneNumberMobile": "%s(phoneNumberMobile)",
   "phoneNumberOffice": "%s(phoneNumberOffice)",
