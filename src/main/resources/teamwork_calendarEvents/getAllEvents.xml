@@ -29,33 +29,33 @@
         <property name="uri.var.page" expression="$func:page"/>
         <property name="uri.var.optionalParameters" value=""/>
         <filter
-                xpath="uri.var.showDeleted = '' or  not(string(uri.var.showDeleted))">
+                xpath="$ctx:uri.var.showDeleted = '' or  not(string($ctx:uri.var.showDeleted))">
             <then>
                 <property name="uri.var.showDeleted" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(uri.var.optionalParameters,
-                '&amp;showDeleted=', uri.var.showDeleted)"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;showDeleted=', $ctx:uri.var.showDeleted)"/>
             </else>
         </filter>
         <filter
-                xpath="uri.var.updatedAfterDate = '' or  not(string(uri.var.updatedAfterDate))">
+                xpath="$ctx:uri.var.updatedAfterDate = '' or  not(string($ctx:uri.var.updatedAfterDate))">
             <then>
                 <property name="uri.var.updatedAfterDate" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(uri.var.optionalParameters,
-                '&amp;updatedAfterDate=', uri.var.updatedAfterDate)"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;updatedAfterDate=', $ctx:uri.var.updatedAfterDate)"/>
             </else>
         </filter>
         <filter
-                xpath="uri.var.page = '' or  not(string(uri.var.page))">
+                xpath="$ctx:uri.var.page = '' or  not(string($ctx:uri.var.page))">
             <then>
                 <property name="uri.var.page" value=""/>
             </then>
             <else>
-                <property name="uri.var.optionalParameters" expression="fn:concat(uri.var.optionalParameters,
-                '&amp;page=', uri.var.page)"/>
+                <property name="uri.var.optionalParameters" expression="fn:concat($ctx:uri.var.optionalParameters,
+                '&amp;page=', $ctx:uri.var.page)"/>
             </else>
         </filter>
 
